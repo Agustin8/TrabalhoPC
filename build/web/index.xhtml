@@ -1,12 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <p:dataTable var="car" value="#{pedidosBean.pedido}">
+        <p:column headerText="NumeroPedido">
+        <h:outputText value="#{pedido.numeroPedido}" />
+    </p:column>
+ 
+    <p:column headerText="Valor">
+        <h:outputText value="#{pedido.valor}" />
+    </p:column>
+ 
+    <p:column headerText="Delivery">
+        <h:outputText value="#{pedido.delivery}" />
+    </p:column>
+ 
+    <p:column headerText="Descricao">
+        <h:outputText value="#{pedido.descricao}" />
+    </p:column>
+    </p:dataTable>
+        <p:button value="Listar"></p:button>
     </h:body>
 </html>
 
